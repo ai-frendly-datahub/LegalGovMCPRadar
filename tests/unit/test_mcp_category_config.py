@@ -20,6 +20,14 @@ def _seed_source(category):
     return seeds[0]
 
 
+def _mcp_source(category, repository: str):
+    return next(
+        source
+        for source in category.sources
+        if source.type == "mcp_server" and source.config.get("repository") == repository
+    )
+
+
 def test_mcp_category_config_uses_readme_section_source() -> None:
     category = load_category_config(_category_name())
 
@@ -92,6 +100,24 @@ def test_mcp_server_sources_are_disabled_metadata_candidates() -> None:
         assert source.config["repository"]
         assert isinstance(source.config.get("tools", []), list)
         assert isinstance(source.config.get("resources", []), list)
+        assert source.config["docs_advisory_audit_status"] == "passed"
+        assert (
+            source.config["docs_advisory_audit_artifact"]
+            == "_workspace/2026-04-30_cycle69_mcp_docs_advisory_audit.json"
+        )
+        assert source.config["github_readme_present"] is True
+        assert source.config["github_docs_present"] is True
+        assert source.config["github_docs_paths"]
+        assert source.config["github_security_advisory_access_status"].startswith("checked")
+        assert source.config["github_security_advisory_count"] >= 0
+        if source.config.get("command_discovery_status"):
+            assert source.config["command_discovery_checked_at"]
+            assert (
+                source.config["command_discovery_artifact"]
+                == "_workspace/2026-04-30_cycle71_mcp_command_discovery_audit.json"
+            )
+        if "command_or_endpoint_unresolved" in source.config.get("activation_gates", []):
+            assert source.config["command_discovery_status"]
         if source.config["activation_status"] != "metadata_only":
             assert source.config["activation_audited_at"]
             assert source.config["activation_gates"]
@@ -105,6 +131,62 @@ def test_mcp_category_quality_config_tracks_mcp_event_models() -> None:
     assert isinstance(outputs, dict)
     assert outputs["tracked_event_models"] == [
         "mcp_directory_entry",
+        "mcp_tool_result",
         "linked_repository_metadata",
         "risk_scope_signal",
     ]
+
+
+def test_finalchild_law_candidate_command_and_tools_are_resolved() -> None:
+    category = load_category_config(_category_name())
+    source = _mcp_source(category, "finalchild/law-mcp")
+
+    assert source.enabled is False
+    assert source.config["activation_status"] == "blocked_env_required"
+    assert source.config["command_discovery_status"] == "resolved_local_build_artifact"
+    assert source.config["command"] == "./build/law-mcp"
+    assert source.config["command_hints"] == ["deno task build:current", "./build/law-mcp"]
+    assert source.config["env"] == ["LAW_API_OC"]
+    assert source.config["event_model"] == "mcp_tool_result"
+    assert "command_or_endpoint_unresolved" not in source.config["activation_gates"]
+    assert "tool_resource_allowlist_required" not in source.config["activation_gates"]
+    assert "tool_allowlist_unresolved" not in source.config["risk_scope"]
+    assert source.config["tools"] == ["search_laws", "get_law_details"]
+    assert source.config["fake_transport_smoke_test_status"] == "passed"
+    assert (
+        source.config["fake_transport_smoke_test_artifact"]
+        == "_workspace/2026-05-01_cycle78_legalgov_finalchild_law_fake_probe.json"
+    )
+    assert source.config["fake_transport_fixture"] == "fixtures/mcp/fake_finalchild_law_mcp.py"
+    assert "fake_transport_smoke_test_required" not in source.config["activation_gates"]
+    assert "env_secret_documentation_required" not in source.config["activation_gates"]
+    assert source.config["env_documentation_status"] == "documented_no_secret_placeholder"
+    assert (
+        source.config["env_documentation_artifact"]
+        == "_workspace/2026-05-07_mcp_env_documentation_manifest.json"
+    )
+    assert "real_transport_smoke_test_required" in source.config["activation_gates"]
+
+
+def test_chrisryugj_korean_law_candidate_has_fake_transport_evidence() -> None:
+    category = load_category_config(_category_name())
+    source = _mcp_source(category, "chrisryugj/korean-law-mcp")
+
+    assert source.enabled is False
+    assert source.config["activation_status"] == "blocked_env_required"
+    assert source.config["fake_transport_smoke_test_status"] == "passed"
+    assert (
+        source.config["fake_transport_smoke_test_artifact"]
+        == "_workspace/2026-05-01_cycle77_legalgov_korean_law_fake_probe.json"
+    )
+    assert source.config["fake_transport_fixture"] == "fixtures/mcp/fake_korean_law_mcp.py"
+    assert source.config["event_model"] == "mcp_tool_result"
+    assert source.config["tools"] == ["korean-law"]
+    assert "fake_transport_smoke_test_required" not in source.config["activation_gates"]
+    assert "env_secret_documentation_required" not in source.config["activation_gates"]
+    assert source.config["env_documentation_status"] == "documented_no_secret_placeholder"
+    assert (
+        source.config["env_documentation_artifact"]
+        == "_workspace/2026-05-07_mcp_env_documentation_manifest.json"
+    )
+    assert "real_transport_smoke_test_required" in source.config["activation_gates"]
