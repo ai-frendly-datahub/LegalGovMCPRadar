@@ -1,29 +1,29 @@
 {
-  "date": "2026-04-13",
+  "date": "2026-05-12",
   "category": "legal_gov_mcp",
-  "article_count": 4,
+  "article_count": 6,
   "source_count": 1,
-  "matched_count": 4,
+  "matched_count": 6,
   "top_entities": [
     {
       "name": "MCPDomain",
-      "count": 25
+      "count": 17
     },
     {
       "name": "ProjectHealth",
-      "count": 12
+      "count": 14
     },
     {
       "name": "Capability",
-      "count": 7
+      "count": 9
     },
     {
       "name": "RiskScope",
-      "count": 4
+      "count": 2
     }
   ],
   "sources": {
-    "awesome-mcp-korea Legal & Government": 4
+    "awesome-mcp-korea Legal & Government": 6
   },
-  "generated_at": "2026-04-13T11:10:35.822762+09:00"
+  "generated_at": "2026-05-12T20:28:53.921189+00:00"
 }
