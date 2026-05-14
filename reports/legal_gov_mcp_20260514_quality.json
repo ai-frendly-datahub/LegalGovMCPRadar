@@ -1,6 +1,6 @@
 {
   "category": "legal_gov_mcp",
-  "generated_at": "2026-05-14T07:46:18.452605+00:00",
+  "generated_at": "2026-05-14T16:09:42.795144+00:00",
   "scope_note": "legal_gov_mcp treats the awesome-mcp-korea section as a T4 community directory seed. Repository metadata, API credential scope, and security context remain separate enrichment layers until archived, license, and advisory fields are collected.",
   "summary": {
     "total_sources": 3,
@@ -101,7 +101,7 @@
       "status": "fresh",
       "article_count": 9,
       "event_count": 9,
-      "latest_event_at": "2026-05-14T07:46:17.857218+00:00",
+      "latest_event_at": "2026-05-14T16:09:42.171475+00:00",
       "age_days": 0.0,
       "latest_title": "workbookbulb863/korean-law-alio-mcp",
       "latest_url": "https://github.com/workbookbulb863/korean-law-alio-mcp",
@@ -156,7 +156,7 @@
         "status": "stale",
         "repository": "chrisryugj/korean-law-mcp",
         "checked_at": "2026-05-07T05:20:56+00:00",
-        "age_days": 7.1,
+        "age_days": 7.45,
         "freshness_sla_days": 7.0,
         "missing_fields": [],
         "github_pushed_at": "2026-05-06T05:45:56Z",
@@ -229,7 +229,7 @@
         "status": "stale",
         "repository": "finalchild/law-mcp",
         "checked_at": "2026-05-07T05:20:56+00:00",
-        "age_days": 7.1,
+        "age_days": 7.45,
         "freshness_sla_days": 7.0,
         "missing_fields": [],
         "github_pushed_at": "2025-07-07T18:53:31Z",
@@ -274,7 +274,7 @@
       "event_model": "mcp_directory_entry",
       "title": "workbookbulb863/korean-law-alio-mcp",
       "url": "https://github.com/workbookbulb863/korean-law-alio-mcp",
-      "event_at": "2026-05-14T07:46:17.857218+00:00",
+      "event_at": "2026-05-14T16:09:42.171475+00:00",
       "mcp_domain": [
         "law",
         "법령"
@@ -300,7 +300,7 @@
       "event_model": "mcp_directory_entry",
       "title": "SeoNaRu/korean-law-mcp",
       "url": "https://github.com/SeoNaRu/korean-law-mcp",
-      "event_at": "2026-05-14T07:46:17.857216+00:00",
+      "event_at": "2026-05-14T16:09:42.171472+00:00",
       "mcp_domain": [
         "law",
         "판례",
@@ -327,7 +327,7 @@
       "event_model": "mcp_directory_entry",
       "title": "rabqatab/LexLink-ko-mcp",
       "url": "https://github.com/rabqatab/LexLink-ko-mcp",
-      "event_at": "2026-05-14T07:46:17.857212+00:00",
+      "event_at": "2026-05-14T16:09:42.171469+00:00",
       "mcp_domain": [
         "판례",
         "법령",
@@ -356,7 +356,7 @@
       "event_model": "risk_scope_signal",
       "title": "rabqatab/LexLink-ko-mcp",
       "url": "https://github.com/rabqatab/LexLink-ko-mcp",
-      "event_at": "2026-05-14T07:46:17.857212+00:00",
+      "event_at": "2026-05-14T16:09:42.171469+00:00",
       "mcp_domain": [
         "판례",
         "법령",
@@ -385,7 +385,7 @@
       "event_model": "mcp_directory_entry",
       "title": "seung23/lawtutor-mcp",
       "url": "https://github.com/seung23/lawtutor-mcp",
-      "event_at": "2026-05-14T07:46:17.857211+00:00",
+      "event_at": "2026-05-14T16:09:42.171468+00:00",
       "mcp_domain": [
         "법령"
       ],
@@ -410,7 +410,7 @@
       "event_model": "mcp_directory_entry",
       "title": "DrMoony/koregx",
       "url": "https://github.com/DrMoony/koregx",
-      "event_at": "2026-05-14T07:46:17.857210+00:00",
+      "event_at": "2026-05-14T16:09:42.171466+00:00",
       "mcp_domain": [
         "법령",
         "행정규칙"
@@ -435,7 +435,7 @@
       "event_model": "mcp_directory_entry",
       "title": "finalchild/law-mcp",
       "url": "https://github.com/finalchild/law-mcp",
-      "event_at": "2026-05-14T07:46:17.857209+00:00",
+      "event_at": "2026-05-14T16:09:42.171465+00:00",
       "mcp_domain": [
         "law",
         "법령"
@@ -460,7 +460,7 @@
       "event_model": "mcp_directory_entry",
       "title": "hollobit/assembly-api-mcp",
       "url": "https://github.com/hollobit/assembly-api-mcp",
-      "event_at": "2026-05-14T07:46:17.857207+00:00",
+      "event_at": "2026-05-14T16:09:42.171464+00:00",
       "mcp_domain": [],
       "provider": [],
       "capability": [
@@ -486,7 +486,7 @@
       "event_model": "risk_scope_signal",
       "title": "hollobit/assembly-api-mcp",
       "url": "https://github.com/hollobit/assembly-api-mcp",
-      "event_at": "2026-05-14T07:46:17.857207+00:00",
+      "event_at": "2026-05-14T16:09:42.171464+00:00",
       "mcp_domain": [],
       "provider": [],
       "capability": [
@@ -512,7 +512,7 @@
       "event_model": "mcp_directory_entry",
       "title": "ChangooLee/mcp-kr-legislation",
       "url": "https://github.com/ChangooLee/mcp-kr-legislation",
-      "event_at": "2026-05-14T07:46:17.857205+00:00",
+      "event_at": "2026-05-14T16:09:42.171461+00:00",
       "mcp_domain": [
         "법률",
         "판례",
@@ -539,7 +539,7 @@
       "event_model": "mcp_directory_entry",
       "title": "chrisryugj/korean-law-mcp",
       "url": "https://github.com/chrisryugj/korean-law-mcp",
-      "event_at": "2026-05-14T07:46:17.857189+00:00",
+      "event_at": "2026-05-14T16:09:42.171444+00:00",
       "mcp_domain": [
         "law",
         "판례",
@@ -657,7 +657,7 @@
       "source": "chrisryugj/korean-law-mcp",
       "repository": "chrisryugj/korean-law-mcp",
       "checked_at": "2026-05-07T05:20:56+00:00",
-      "age_days": 7.1,
+      "age_days": 7.45,
       "freshness_sla_days": 7.0
     },
     {
@@ -683,7 +683,7 @@
       "source": "finalchild/law-mcp",
       "repository": "finalchild/law-mcp",
       "checked_at": "2026-05-07T05:20:56+00:00",
-      "age_days": 7.1,
+      "age_days": 7.45,
       "freshness_sla_days": 7.0
     }
   ],
